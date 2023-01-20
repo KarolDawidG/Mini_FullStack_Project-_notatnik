@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const {port} = require('./config'); //destrukturyzacja
-const apiRouter = require('./routers/api');
+const apiRouter = require('./backend/routers/api');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -10,7 +10,7 @@ const cors = require('cors');
 app.use(bodyParser.json());
 
 // baza danych
-require('./dataBase/mongoose');
+require('./backend/dataBase/mongoose');
 
 //fix cors
 app.use(cors());
